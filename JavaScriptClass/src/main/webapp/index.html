@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Class 3</title>
+</head>
+<body>
+	<h1>Working</h1>
+	<form action="class3" method="post" id="form">
+		<input type="text" placeholder="Enter username" id="username" name="username">
+		<span id="username-msg"></span>
+		<input type="text" placeholder="Enter password" id="password" name="password">
+		<span id="password-msg"></span>
+		<button onclick="handleClick(event)">Submit</button>
+	</form>
+	
+</body>
+<script>
+	function validateUsername(username) {
+		// 1. cannot be empty
+		// 2. must contain at least 8 characters
+		// 3. cannot contain initial spaces
+		if (username === "" || username === null)
+			return false;
+		if (username.length < 8)
+			return false;
+		if (username[0] === " ")
+			return false;
+		return true;
+	}
+	
+	function validatePassword(password) {
+		// 1. password cannot be empty
+		// 2. password must be of at least 8 characters
+		// 3. password must contain alphabets and numbers
+		// 4. password must contain uppercase and lowercase characters
+		// 5. password must contain at least 1 special case character
+		return true;
+	}
+
+	function handleClick(e) {
+		let username = document.getElementById("username");
+		let password = document.getElementById("password");
+		let form = document.getElementById("form");
+		
+		if (!validateUsername(username.value) || !validatePassword(password.value)) {
+			// the form cannot be submitted
+			e.preventDefault(); // prevent the default behaviour of the current event
+			if (!validateUsername(username.value)) {
+				document.getElementById("username-msg").innerHTML = "Not a valid username";
+					document.getElementById("password-msg").innerHTML = "";
+			}
+			if (!validatePassword(password.value)) {
+				document.getElementById("username-msg").innerHTML = "";
+				document.getElementById("password-msg").innerHTML = "Not a valid password";
+			}
+		} else {
+			// now the form can be submitted
+			//form.submit();
+		}
+	}
+</script>
+</html>

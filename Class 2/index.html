@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>JavaScript class2</title>
+        <style>
+            #num1 {
+                color: orange;
+                font-weight: bold;
+            }
+
+            input {
+                border: 4px dashed red;
+            }
+
+            .bg-dark {
+                background-color: black;
+                color: white;
+                font-weight: bold;
+            }
+
+            /* pseudo selector */
+            #num1:hover {
+                background-color: cyan;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="number" id="num1">
+        <select class="bg-dark" id="operation">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <input type="number" id="num2">
+        <button class="bg-dark" onclick="calculate()">Calculate</button>
+        <span id="result"></span>
+    </body>
+    <script src="./js/index.js"></script>
+    <script>
+        // everything confusing goes below
+        /**
+         * let -> block scoped
+         * var -> function scoped
+         */
+        // let x = 10;
+        // var y = 12;
+        // console.log(x);
+        // console.log(y);
+
+        sum(13, 16);
+        console.log("var b = ", b);
+        // console.log("let a = ", a);
+        if (true) {
+            let a = 100;
+            var b = 200;
+            console.log("Inside if", a);
+            console.log("Inside if", b);
+            var b = "hello world";
+        }
+        let a = 12.456;
+        console.log("Outside if", b);
+        console.log("Outside if", a);
+
+        function sum(a, b) { console.log(a+b); }
+
+        var x;
+        console.log("x = ", x);
+        const c = 33.33;
+    </script>
+</html>
