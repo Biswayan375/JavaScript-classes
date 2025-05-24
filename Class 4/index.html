@@ -1,0 +1,46 @@
+<html>
+    <head></head>
+    <body>
+        <h1 class="element" id="show-second"></h1>
+        <button class="element" id="hit-button">Hit me!</button>
+        <button class="element" id="reset-timer">Reset Timer</button>
+    </body>
+
+    <script src="./timeoutAndInterval.js"></script>
+    <script>
+        function sum (a, b) {
+            console.log(a+b);
+            return a+b;
+        }
+
+        let a = sum;
+        console.log(a(10, 12));
+        console.log(a);
+
+        // anonymous function or arrow function
+        let sub = (x, y) => {
+            return x-y;
+        }
+        console.log(sub(10, 7));
+
+        function handleClick() {
+            console.log("clicked");
+        }
+
+        const hitButton = document.getElementById("hit-button");
+        console.log(hitButton);
+        hitButton.addEventListener('click', () => {
+            console.log("clicked")
+        });
+
+        let arr1 = [1, 2, 'hello', true];
+        console.log(arr1);
+        console.log(arr1.toString());
+
+        let elements = document.getElementsByClassName("element");
+        console.log(elements);
+
+        let buttons = document.getElementsByTagName("button");
+        console.log(buttons);
+    </script>
+</html>
